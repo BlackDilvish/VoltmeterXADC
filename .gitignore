@@ -1,0 +1,9 @@
+*.backup.jou
+*.str
+*.backup.log
+project_1.cache/*
+project_1.runs/*
+project_1.sim/*
+xadc_wiz_0_ex/xadc_wiz_0_ex.cache/*
+xadc_wiz_0_ex/xadc_wiz_0_ex.runs/*
+xadc_wiz_0_ex/xadc_wiz_0_ex.sim/*
