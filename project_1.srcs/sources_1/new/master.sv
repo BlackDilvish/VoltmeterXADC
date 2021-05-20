@@ -22,13 +22,27 @@
 
 module master #(parameter deep = 16, nb = $clog2(deep))(
     input clk, rst,
-    output logic [3:0] wadr, output logic awvld, input awrdy,
+    output logic [10:0] wadr_xadc, output logic [3:0] wadr, output logic awvld, input awrdy,
     output [31:0] wdat, output logic wvld, input wrdy,
     input [1:0] brsp, input bvld, output logic brdy,
-    output logic [3:0] radr, output logic arvld, input arrdy,
+    output logic [10:0] radr_xadc, output logic [3:0] radr, output logic arvld, input arrdy,
     input [31:0] rdat, input rvld, output logic rrdy,
     output [nb-1:0] mem_addr, input [7:0] data_tr, output logic [7:0] data_rec,
-    output logic rd, wr
+    output logic rd, wr,
+    input [31:0] rdat_xadc,
+    input bvld_xadc,
+    input rvld_xadc,
+    input awrdy_xadc,
+    input arrdy_xadc,
+    input [1:0] brsp_xadc,
+    input wrdy_xadc,
+    input [4:0] channel_out,
+    input eoc,
+    output logic [31:0] wdat_xadc,
+    output logic [3:0] wstrb_xadc,
+    output logic awvld_xadc,
+    output logic wvld_xadc,
+    output logic arvld_xadc
     );
     
 typedef enum {readstatus, waitstatus, read, waitread, write, waitwrite, waitresp, command, clear} states_e;
@@ -55,6 +69,31 @@ wire incat = ((st == waitwrite) & awrdy & ~rec_trn & (addr < max_data));
         rec_trn <= 1'b0;
     else if(st == clear)
         rec_trn <= 1'b1;*/
+        
+always @(posedge clk, posedge rst)
+begin
+  if (rst) begin
+   wadr_xadc <= 11'b00000000000; //{5'b00, CHANNEL_TB};
+   radr_xadc <= 11'b00000000000; //{5'b00, CHANNEL_TB};
+   wdat_xadc <= 32'h00000000;
+   wstrb_xadc <= 4'h0;
+   arvld_xadc <= 1'b0; 
+   awvld_xadc <= 1'b0;
+   wvld_xadc <= 1'b0;
+  end
+  else begin
+   wadr_xadc <= {4'b0100, channel_out, 2'b00};
+   radr_xadc <= {4'b0100, channel_out, 2'b00};
+   wdat_xadc <= 32'h0000b5ed;
+   wstrb_xadc <= 4'hF;
+   awvld_xadc <= 1'b0; 
+   wvld_xadc <= 1'b0;
+   if (eoc == 1'b1)  
+     arvld_xadc <= 1'b1;
+   else if (arrdy_xadc == 1'b1) 
+     arvld_xadc <= 1'b0;
+  end
+end
     
 always @(posedge clk, posedge rst)
     if(rst) begin

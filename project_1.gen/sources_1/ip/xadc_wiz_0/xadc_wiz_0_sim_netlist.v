@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-// Date        : Thu May 13 13:11:40 2021
-// Host        : MSI running 64-bit major release  (build 9200)
+// Date        : Thu May 20 11:40:43 2021
+// Host        : DESKTOP-HGA1Q8G running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/AGH/JOS/Projekt/project_1/project_1.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0_sim_netlist.v
+//               d:/JOS/projekt/project_1.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0_sim_netlist.v
 // Design      : xadc_wiz_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
