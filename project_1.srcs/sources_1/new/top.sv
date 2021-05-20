@@ -31,7 +31,7 @@ wire [4:0] channel_out;
 wire [3 : 0] s_axi_awaddr,s_axi_araddr;
 wire [31 : 0] s_axi_wdata, s_axi_wdata_xadc, s_axi_rdata, s_axi_rdata_xadc;
 wire [3 : 0] s_axi_wstrb = 4'b1111; 
-wire [3 : 0] s_axi_wstrb_xadc;
+wire [3 : 0] s_axi_wstrb_xadc = 4'b1111;
 wire [1 : 0] s_axi_rresp, s_axi_bresp, s_axi_bresp_xadc, s_axi_rresp_xadc;
 
 //xadc
@@ -84,7 +84,7 @@ master #(.deep(mdeep)) m_axi (
     .bvld_xadc(s_axi_bvalid_xadc),
     .rvld_xadc(s_axi_rvalid_xadc),
     .awrdy_xadc(s_axi_awready_xadc),
-    .arrdy_xadc(s_axi_rready_xadc),
+    .arrdy_xadc(s_axi_arready_xadc),
     .brsp_xadc(s_axi_bresp_xadc),
     .wrdy_xadc(s_axi_wready_xadc),
     .wadr_xadc(s_axi_awaddr_xadc),
@@ -93,7 +93,7 @@ master #(.deep(mdeep)) m_axi (
     .wstrb_xadc(s_axi_wstrb_xadc),
     .awvld_xadc(s_axi_awvalid_xadc),
     .wvld_xadc(s_axi_wvalid_xadc),
-    .arvld_xadc(s_axi_rvalid_xadc),
+    .arvld_xadc(s_axi_arvalid_xadc),
     .channel_out(channel_out)
     );    
     
@@ -110,7 +110,7 @@ xadc_wiz_0 adc_axi (
   .s_axi_awvalid(s_axi_awvalid),              // input wire s_axi_awvalid
   .s_axi_awready(s_axi_awready_xadc),              // output wire s_axi_awready
   .s_axi_wdata(s_axi_wdata_xadc),                  // input wire [31 : 0] s_axi_wdata
-  .s_axi_wstrb(s_axi_wstrb),                  // input wire [3 : 0] s_axi_wstrb
+  .s_axi_wstrb(s_axi_wstrb_xadc),                  // input wire [3 : 0] s_axi_wstrb
   .s_axi_wvalid(s_axi_wvalid),                // input wire s_axi_wvalid
   .s_axi_wready(s_axi_wready_xadc),                // output wire s_axi_wready
   .s_axi_bresp(s_axi_bresp_xadc),                  // output wire [1 : 0] s_axi_bresp

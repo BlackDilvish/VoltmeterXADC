@@ -2,15 +2,17 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu May 20 11:54:46 2021
-# Process ID: 16204
-# Current directory: D:/JOS/projekt/xadc_wiz_0_ex
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21624 D:\JOS\projekt\xadc_wiz_0_ex\xadc_wiz_0_ex.xpr
-# Log file: D:/JOS/projekt/xadc_wiz_0_ex/vivado.log
-# Journal file: D:/JOS/projekt/xadc_wiz_0_ex\vivado.jou
+# Start of session at: Thu May 20 13:19:15 2021
+# Process ID: 3300
+# Current directory: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19128 C:\AGH\JOS\Projekt\Woltomierz_XADC\VoltmeterXADC\xadc_wiz_0_ex\xadc_wiz_0_ex.xpr
+# Log file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex/vivado.log
+# Journal file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/JOS/projekt/xadc_wiz_0_ex/xadc_wiz_0_ex.xpr
+open_project C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex/xadc_wiz_0_ex.xpr
 update_compile_order -fileset sources_1
 launch_simulation
 source xadc_wiz_0_tb.tcl
+run all
+close_sim
