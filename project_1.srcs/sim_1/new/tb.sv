@@ -23,10 +23,10 @@
 module tb();
 localparam d = 20, hp = 5, fclk = 100_000_000, br = 230400, size = 8;
 localparam ratio = fclk / br - 1;
-logic clk, rst, strt, strr;
+logic clk, rst, strt, strr, vauxp0, vauxn0;
 wire fint, finr;
 
-top #(.mdeep(d)) uut (.clk(clk), .rst(rst), .rx(rx), .tx(tx));
+top #(.mdeep(d)) uut (.clk(clk), .rst(rst), .rx(rx), .tx(tx), .vauxp0(vauxp0), .vauxn0(vauxn0));
 //simple_reciver
 simple_receiver #(.fclk(fclk), .baudrate(br), .nb(size), .deep(d)) receiver
     (.clk(clk), .rst(rst), .str(strr), .rx(tx), .fin(finr));

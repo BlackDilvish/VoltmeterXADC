@@ -26,18 +26,17 @@ module xadc_tb();
 localparam  ONE_NS      = 1;
 integer    count       = 0   ;
 localparam time PER1    = 10*ONE_NS;
-// Declare the input clock signals
-reg         s_axi_aclk     = 0;
-reg         s_axi_aclk_tb  = 0;
 
 localparam d = 20, hp = 5, fclk = 100_000_000, br = 230400, size = 8;
 localparam ratio = fclk / br - 1;
-logic clk, rst;
+logic clk, rst, vauxp0, vauxn0;
 
-top #(.mdeep(d)) uut (.clk(clk), .rst(rst), .rx(rx), .tx(tx));
+top #(.mdeep(d)) uut (.clk(clk), .rst(rst), .rx(rx), .tx(tx), .vauxp0(vauxp0), .vauxn0(vauxn0));
 
 initial begin
     clk = 1'b0;
+    vauxp0 = 1'b0;
+    vauxn0 = 1'b0;
     forever #hp clk = ~clk;
 end
 
@@ -79,18 +78,32 @@ begin
   @(negedge uut.m_axi.rvld_xadc);
     $display ("This TB supports CONSTANT Waveform comaprision. User should compare the analog input and digital output for SIN, TRAINGLE, SQUARE waves !!") ;
     $display ("Waiting for Analog Waveform to complete !!") ;
-    #(3000000.0);
+    #(2000000.0);
   $display("SYSTEM_CLOCK_COUNTER : %0d\n",$time/PER1);
   $display ("Test Completed Successfully");
   $finish;
 end
 
 reg [11:0] Analog_Wave_Single_Ch;
+real voltage = 0;
 
 always @ (posedge clk)
 begin
-  if (uut.m_axi.rvld_xadc)
+  if (uut.m_axi.rvld_xadc) begin
     Analog_Wave_Single_Ch <= uut.m_axi.rdat_xadc[15:4];
+    voltage = transcode(Analog_Wave_Single_Ch);
+    end
 end 
+
+function real transcode(input [11:0] code);
+        automatic reg [11:0] mask = 12'b100000000000;
+        integer i;
+        begin
+            transcode = 0.0;
+            for(i = 0; i < 12; i = i + 1)
+                if(code & (mask >> i))
+                    transcode += (3.3 / (2 ** (i + 1)));
+        end
+endfunction
 
 endmodule

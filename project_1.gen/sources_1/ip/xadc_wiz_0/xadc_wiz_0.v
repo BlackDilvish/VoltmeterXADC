@@ -47,7 +47,7 @@
 // PART OF THIS FILE AT ALL TIMES.
 `timescale 1ns / 1 ps
 
-(* CORE_GENERATION_INFO = "xadc_wiz_0,xadc_wiz_v3_3_8,{component_name=xadc_wiz_0,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=true,enable_Vccint_Alaram=true,enable_Vccaux_alaram=true,enable_vccpaux_alaram=true,enable_vccpint_alaram=true,ot_alaram=true,user_temp_alaram=true,timing_mode=continuous,channel_averaging=None,sequencer_mode=off,startup_channel_selection=single_channel}" *)
+(* CORE_GENERATION_INFO = "xadc_wiz_0,xadc_wiz_v3_3_8,{component_name=xadc_wiz_0,enable_axi=true,enable_axi4stream=false,dclk_frequency=100,enable_busy=true,enable_convst=false,enable_convstclk=false,enable_dclk=true,enable_drp=false,enable_eoc=true,enable_eos=true,enable_vbram_alaram=false,enable_vccddro_alaram=false,enable_Vccint_Alaram=false,enable_Vccaux_alaram=false,enable_vccpaux_alaram=false,enable_vccpint_alaram=false,ot_alaram=false,user_temp_alaram=false,timing_mode=continuous,channel_averaging=None,sequencer_mode=off,startup_channel_selection=single_channel}" *)
 
 
 module xadc_wiz_0
@@ -72,17 +72,12 @@ module xadc_wiz_0
     output s_axi_rvalid,
     input s_axi_rready,
     output ip2intc_irpt,
+    input vauxp0,                                              
+    input vauxn0,                                              
     output [4:0] channel_out,
     output busy_out,        
     output eoc_out, 
     output eos_out,
-    output ot_out, 
-    output vccddro_alarm_out,
-    output vccpaux_alarm_out,
-    output vccpint_alarm_out,
-    output vccaux_alarm_out,
-    output vccint_alarm_out,
-    output user_temp_alarm_out,
     output alarm_out ,                                          
     input vp_in,                                               
     input vn_in
@@ -90,12 +85,6 @@ module xadc_wiz_0
 
           wire [7:0]  alm_int;
           assign alarm_out = alm_int[7];
-       assign vccddro_alarm_out = alm_int[6];
-       assign vccpaux_alarm_out = alm_int[5];
-       assign vccpint_alarm_out = alm_int[4];
-          assign vccaux_alarm_out = alm_int[2];
-          assign vccint_alarm_out = alm_int[1];
-          assign user_temp_alarm_out = alm_int[0];
 
     xadc_wiz_0_axi_xadc 
    #("xadc_wiz_0_axi_xadc","virtex7", 11, 32, 1,"design.txt")
@@ -121,11 +110,12 @@ module xadc_wiz_0
     .s_axi_rvalid    (s_axi_rvalid),                    
     .s_axi_rready    (s_axi_rready),                    
     .ip2intc_irpt    (ip2intc_irpt),  
+    .vauxp0 (vauxp0),
+    .vauxn0 (vauxn0),
     .channel_out(channel_out),
     .busy_out(busy_out), 
     .eoc_out(eoc_out), 
     .eos_out(eos_out),
-    .ot_out(ot_out),
     .alarm_out  (alm_int),
     .vp_in (vp_in),
     .vn_in (vn_in)

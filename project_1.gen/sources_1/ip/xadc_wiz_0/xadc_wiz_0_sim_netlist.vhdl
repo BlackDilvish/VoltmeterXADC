@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Thu May 27 10:07:10 2021
+-- Date        : Thu May 27 11:45:18 2021
 -- Host        : MSI running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               c:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0_sim_netlist.vhdl
@@ -3311,6 +3311,8 @@ entity xadc_wiz_0_xadc_wiz_0_xadc_core_drp is
     vn_in : in STD_LOGIC;
     vp_in : in STD_LOGIC;
     s_axi_wdata : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    vauxn0 : in STD_LOGIC;
+    vauxp0 : in STD_LOGIC;
     \status_reg_reg[7]_0\ : in STD_LOGIC_VECTOR ( 2 downto 0 );
     reset2ip_reset : in STD_LOGIC;
     local_reg_wrack_d1_reg_0 : in STD_LOGIC;
@@ -3468,8 +3470,8 @@ begin
     );
 XADC_INST: unisim.vcomponents.XADC
     generic map(
-      INIT_40 => X"0003",
-      INIT_41 => X"31A0",
+      INIT_40 => X"0010",
+      INIT_41 => X"31AF",
       INIT_42 => X"0400",
       INIT_43 => X"0000",
       INIT_44 => X"0000",
@@ -3529,8 +3531,10 @@ XADC_INST: unisim.vcomponents.XADC
       MUXADDR(4 downto 0) => NLW_XADC_INST_MUXADDR_UNCONNECTED(4 downto 0),
       OT => \^s_axi_aclk_0\(0),
       RESET => RESET,
-      VAUXN(15 downto 0) => B"0000000000000000",
-      VAUXP(15 downto 0) => B"0000000000000000",
+      VAUXN(15 downto 1) => B"000000000000000",
+      VAUXN(0) => vauxn0,
+      VAUXP(15 downto 1) => B"000000000000000",
+      VAUXP(0) => vauxp0,
       VN => vn_in,
       VP => vp_in
     );
@@ -5271,11 +5275,12 @@ entity xadc_wiz_0_xadc_wiz_0_axi_xadc is
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
     ip2intc_irpt : out STD_LOGIC;
+    vauxp0 : in STD_LOGIC;
+    vauxn0 : in STD_LOGIC;
     busy_out : out STD_LOGIC;
     channel_out : out STD_LOGIC_VECTOR ( 4 downto 0 );
     eoc_out : out STD_LOGIC;
     eos_out : out STD_LOGIC;
-    ot_out : out STD_LOGIC;
     alarm_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
     vp_in : in STD_LOGIC;
     vn_in : in STD_LOGIC
@@ -5316,7 +5321,13 @@ architecture STRUCTURE of xadc_wiz_0_xadc_wiz_0_axi_xadc is
   signal AXI_LITE_IPIF_I_n_62 : STD_LOGIC;
   signal AXI_XADC_CORE_I_n_16 : STD_LOGIC;
   signal AXI_XADC_CORE_I_n_24 : STD_LOGIC;
+  signal AXI_XADC_CORE_I_n_29 : STD_LOGIC;
+  signal AXI_XADC_CORE_I_n_30 : STD_LOGIC;
+  signal AXI_XADC_CORE_I_n_31 : STD_LOGIC;
   signal AXI_XADC_CORE_I_n_32 : STD_LOGIC;
+  signal AXI_XADC_CORE_I_n_33 : STD_LOGIC;
+  signal AXI_XADC_CORE_I_n_34 : STD_LOGIC;
+  signal AXI_XADC_CORE_I_n_35 : STD_LOGIC;
   signal \INTR_CTRLR_GEN_I.INTERRUPT_CONTROL_I_n_1\ : STD_LOGIC;
   signal \INTR_CTRLR_GEN_I.INTERRUPT_CONTROL_I_n_22\ : STD_LOGIC;
   signal \INTR_CTRLR_GEN_I.INTERRUPT_CONTROL_I_n_25\ : STD_LOGIC;
@@ -5329,7 +5340,7 @@ architecture STRUCTURE of xadc_wiz_0_xadc_wiz_0_axi_xadc is
   signal SOFT_RESET_I_n_2 : STD_LOGIC;
   signal SOFT_RESET_I_n_3 : STD_LOGIC;
   signal Sysmon_IP2Bus_Data : STD_LOGIC_VECTOR ( 14 to 14 );
-  signal \^alarm_out\ : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal \^alarm_out\ : STD_LOGIC_VECTOR ( 7 to 7 );
   signal alarm_reg : STD_LOGIC_VECTOR ( 0 to 0 );
   signal bus2ip_addr : STD_LOGIC_VECTOR ( 6 downto 4 );
   signal bus2ip_rdce : STD_LOGIC_VECTOR ( 24 downto 0 );
@@ -5379,7 +5390,7 @@ architecture STRUCTURE of xadc_wiz_0_xadc_wiz_0_axi_xadc is
   signal local_reg_rdack_d1 : STD_LOGIC;
   signal local_reg_wrack0 : STD_LOGIC;
   signal local_reg_wrack_d1 : STD_LOGIC;
-  signal \^ot_out\ : STD_LOGIC;
+  signal ot_i : STD_LOGIC;
   signal p_0_in0_in : STD_LOGIC;
   signal p_0_in14_in : STD_LOGIC;
   signal p_0_in17_in : STD_LOGIC;
@@ -5436,12 +5447,16 @@ architecture STRUCTURE of xadc_wiz_0_xadc_wiz_0_axi_xadc is
   attribute sigis of s_axi_aclk : signal is "Clk";
   attribute sigis of s_axi_aresetn : signal is "Rst";
 begin
-  alarm_out(7 downto 4) <= \^alarm_out\(7 downto 4);
+  alarm_out(7) <= \^alarm_out\(7);
+  alarm_out(6) <= \<const0>\;
+  alarm_out(5) <= \<const0>\;
+  alarm_out(4) <= \<const0>\;
   alarm_out(3) <= \<const0>\;
-  alarm_out(2 downto 0) <= \^alarm_out\(2 downto 0);
+  alarm_out(2) <= \<const0>\;
+  alarm_out(1) <= \<const0>\;
+  alarm_out(0) <= \<const0>\;
   eoc_out <= \^eoc_out\;
   eos_out <= \^eos_out\;
-  ot_out <= \^ot_out\;
   s_axi_awready <= \^s_axi_awready\;
   s_axi_bresp(1) <= \^s_axi_bresp\(1);
   s_axi_bresp(0) <= \<const0>\;
@@ -5495,9 +5510,14 @@ AXI_LITE_IPIF_I: entity work.xadc_wiz_0_xadc_wiz_0_axi_lite_ipif
       \GEN_BKEND_CE_REGISTERS[24].ce_out_i_reg[24]_0\ => AXI_LITE_IPIF_I_n_57,
       \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[16]\(15 downto 0) => do_reg(15 downto 0),
       \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[21]\(10 downto 0) => status_reg(10 downto 0),
-      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(8 downto 5) => \^alarm_out\(7 downto 4),
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(8) => \^alarm_out\(7),
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(7) => AXI_XADC_CORE_I_n_29,
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(6) => AXI_XADC_CORE_I_n_30,
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(5) => AXI_XADC_CORE_I_n_31,
       \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(4) => AXI_XADC_CORE_I_n_32,
-      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(3 downto 1) => \^alarm_out\(2 downto 0),
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(3) => AXI_XADC_CORE_I_n_33,
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(2) => AXI_XADC_CORE_I_n_34,
+      \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(1) => AXI_XADC_CORE_I_n_35,
       \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[23]\(0) => alarm_reg(0),
       \INTR_CTRLR_GEN_I.ip2bus_data_int_reg[31]\ => \INTR_CTRLR_GEN_I.INTERRUPT_CONTROL_I_n_1\,
       \INTR_CTRLR_GEN_I.ip2bus_wrack_reg\ => AXI_XADC_CORE_I_n_24,
@@ -5618,9 +5638,14 @@ AXI_XADC_CORE_I: entity work.xadc_wiz_0_xadc_wiz_0_xadc_core_drp
       D(4 downto 0) => channel_out(4 downto 0),
       \INTR_CTRLR_GEN_I.ip2bus_error_reg\ => AXI_LITE_IPIF_I_n_42,
       \INTR_CTRLR_GEN_I.ip2bus_error_reg_0\ => \INTR_CTRLR_GEN_I.ip2bus_error_i_3_n_0\,
-      Q(8 downto 5) => \^alarm_out\(7 downto 4),
+      Q(8) => \^alarm_out\(7),
+      Q(7) => AXI_XADC_CORE_I_n_29,
+      Q(6) => AXI_XADC_CORE_I_n_30,
+      Q(5) => AXI_XADC_CORE_I_n_31,
       Q(4) => AXI_XADC_CORE_I_n_32,
-      Q(3 downto 1) => \^alarm_out\(2 downto 0),
+      Q(3) => AXI_XADC_CORE_I_n_33,
+      Q(2) => AXI_XADC_CORE_I_n_34,
+      Q(1) => AXI_XADC_CORE_I_n_35,
       Q(0) => alarm_reg(0),
       bus2ip_rdce(1) => bus2ip_rdce(23),
       bus2ip_rdce(0) => bus2ip_rdce(0),
@@ -5661,7 +5686,7 @@ AXI_XADC_CORE_I: entity work.xadc_wiz_0_xadc_wiz_0_xadc_core_drp
       s_axi_aclk_0(3) => p_5_in,
       s_axi_aclk_0(2) => p_6_in,
       s_axi_aclk_0(1) => AXI_XADC_CORE_I_n_16,
-      s_axi_aclk_0(0) => \^ot_out\,
+      s_axi_aclk_0(0) => ot_i,
       s_axi_araddr(3 downto 2) => s_axi_araddr(8 downto 7),
       s_axi_araddr(1 downto 0) => s_axi_araddr(3 downto 2),
       s_axi_arvalid => s_axi_arvalid,
@@ -5672,6 +5697,8 @@ AXI_XADC_CORE_I: entity work.xadc_wiz_0_xadc_wiz_0_xadc_core_drp
       status_reg_rdack_d1 => status_reg_rdack_d1,
       \status_reg_reg[10]_0\(10 downto 0) => status_reg(10 downto 0),
       \status_reg_reg[7]_0\(2 downto 0) => bus2ip_addr(6 downto 4),
+      vauxn0 => vauxn0,
+      vauxp0 => vauxp0,
       vn_in => vn_in,
       vp_in => vp_in
     );
@@ -5689,7 +5716,7 @@ GND: unisim.vcomponents.GND
       \DO_IRPT_INPUT[13].GEN_POS_EDGE_DETECT.irpt_dly1_reg_0\(3) => p_5_in,
       \DO_IRPT_INPUT[13].GEN_POS_EDGE_DETECT.irpt_dly1_reg_0\(2) => p_6_in,
       \DO_IRPT_INPUT[13].GEN_POS_EDGE_DETECT.irpt_dly1_reg_0\(1) => AXI_XADC_CORE_I_n_16,
-      \DO_IRPT_INPUT[13].GEN_POS_EDGE_DETECT.irpt_dly1_reg_0\(0) => \^ot_out\,
+      \DO_IRPT_INPUT[13].GEN_POS_EDGE_DETECT.irpt_dly1_reg_0\(0) => ot_i,
       E(0) => irpt_wrack_d11,
       \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0\ => \INTR_CTRLR_GEN_I.INTERRUPT_CONTROL_I_n_1\,
       \GEN_IP_IRPT_STATUS_REG[16].GEN_REG_STATUS.ip_irpt_status_reg_reg[16]_0\ => AXI_LITE_IPIF_I_n_50,
@@ -6115,17 +6142,12 @@ entity xadc_wiz_0 is
     s_axi_rvalid : out STD_LOGIC;
     s_axi_rready : in STD_LOGIC;
     ip2intc_irpt : out STD_LOGIC;
+    vauxp0 : in STD_LOGIC;
+    vauxn0 : in STD_LOGIC;
     channel_out : out STD_LOGIC_VECTOR ( 4 downto 0 );
     busy_out : out STD_LOGIC;
     eoc_out : out STD_LOGIC;
     eos_out : out STD_LOGIC;
-    ot_out : out STD_LOGIC;
-    vccddro_alarm_out : out STD_LOGIC;
-    vccpaux_alarm_out : out STD_LOGIC;
-    vccpint_alarm_out : out STD_LOGIC;
-    vccaux_alarm_out : out STD_LOGIC;
-    vccint_alarm_out : out STD_LOGIC;
-    user_temp_alarm_out : out STD_LOGIC;
     alarm_out : out STD_LOGIC;
     vp_in : in STD_LOGIC;
     vn_in : in STD_LOGIC
@@ -6139,7 +6161,7 @@ architecture STRUCTURE of xadc_wiz_0 is
   signal \^s_axi_bresp\ : STD_LOGIC_VECTOR ( 1 to 1 );
   signal \^s_axi_rdata\ : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal \^s_axi_rresp\ : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal NLW_inst_alarm_out_UNCONNECTED : STD_LOGIC_VECTOR ( 3 to 3 );
+  signal NLW_inst_alarm_out_UNCONNECTED : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal NLW_inst_s_axi_bresp_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_inst_s_axi_rdata_UNCONNECTED : STD_LOGIC_VECTOR ( 30 downto 18 );
   signal NLW_inst_s_axi_rresp_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
@@ -6188,19 +6210,12 @@ GND: unisim.vcomponents.GND
 inst: entity work.xadc_wiz_0_xadc_wiz_0_axi_xadc
      port map (
       alarm_out(7) => alarm_out,
-      alarm_out(6) => vccddro_alarm_out,
-      alarm_out(5) => vccpaux_alarm_out,
-      alarm_out(4) => vccpint_alarm_out,
-      alarm_out(3) => NLW_inst_alarm_out_UNCONNECTED(3),
-      alarm_out(2) => vccaux_alarm_out,
-      alarm_out(1) => vccint_alarm_out,
-      alarm_out(0) => user_temp_alarm_out,
+      alarm_out(6 downto 0) => NLW_inst_alarm_out_UNCONNECTED(6 downto 0),
       busy_out => busy_out,
       channel_out(4 downto 0) => channel_out(4 downto 0),
       eoc_out => eoc_out,
       eos_out => eos_out,
       ip2intc_irpt => ip2intc_irpt,
-      ot_out => ot_out,
       s_axi_aclk => s_axi_aclk,
       s_axi_araddr(10) => '0',
       s_axi_araddr(9 downto 2) => s_axi_araddr(9 downto 2),
@@ -6230,6 +6245,8 @@ inst: entity work.xadc_wiz_0_xadc_wiz_0_axi_xadc
       s_axi_wready => s_axi_wready,
       s_axi_wstrb(3 downto 0) => s_axi_wstrb(3 downto 0),
       s_axi_wvalid => s_axi_wvalid,
+      vauxn0 => vauxn0,
+      vauxp0 => vauxp0,
       vn_in => vn_in,
       vp_in => vp_in
     );

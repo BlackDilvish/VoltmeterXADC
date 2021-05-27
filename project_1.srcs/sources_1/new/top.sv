@@ -21,8 +21,8 @@
 
 
 module top #(parameter mdeep = 20 ) (
-    input clk, rst, rx,
-    output tx
+    input clk, rst, rx, vauxp0, vauxn0,
+    output tx, output [7:0] data_out
     );
     
 wire [4:0] channel_out;
@@ -93,7 +93,8 @@ master #(.deep(mdeep)) m_axi (
     .awvld_xadc(s_axi_awvalid_xadc),
     .wvld_xadc(s_axi_wvalid_xadc),
     .arvld_xadc(s_axi_arvalid_xadc),
-    .channel_out(channel_out)
+    .channel_out(channel_out),
+    .data_out(data_out)
     );    
     
 memory #(.deep(mdeep)) storage (
@@ -125,13 +126,8 @@ xadc_wiz_0 adc_axi (
   .ip2intc_irpt(ip2intc_irpt),                // output wire ip2intc_irpt
   .vp_in(1'b0),                              // input wire vp_in
   .vn_in(1'b0),                             // input wire vn_in
-  .user_temp_alarm_out(user_temp_alarm_out),  // output wire user_temp_alarm_out
-  .vccint_alarm_out(vccint_alarm_out),        // output wire vccint_alarm_out
-  .vccaux_alarm_out(vccaux_alarm_out),        // output wire vccaux_alarm_out
-  .vccpint_alarm_out(vccpint_alarm_out),      // output wire vccpint_alarm_out
-  .vccpaux_alarm_out(vccpaux_alarm_out),      // output wire vccpaux_alarm_out
-  .vccddro_alarm_out(vccddro_alarm_out),      // output wire vccddro_alarm_out
-  .ot_out(ot_out),                            // output wire ot_out
+  .vauxp0(vauxp0),                            // input wire vauxp0
+  .vauxn0(vauxn0),                            // input wire vauxn0
   .channel_out(channel_out),                  // output wire [4 : 0] channel_out
   .eoc_out(eoc_out),                          // output wire eoc_out
   .alarm_out(alarm_out),                      // output wire alarm_out

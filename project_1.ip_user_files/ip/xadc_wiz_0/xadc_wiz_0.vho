@@ -76,13 +76,8 @@ COMPONENT xadc_wiz_0
     ip2intc_irpt : OUT STD_LOGIC;
     vp_in : IN STD_LOGIC;
     vn_in : IN STD_LOGIC;
-    user_temp_alarm_out : OUT STD_LOGIC;
-    vccint_alarm_out : OUT STD_LOGIC;
-    vccaux_alarm_out : OUT STD_LOGIC;
-    vccpint_alarm_out : OUT STD_LOGIC;
-    vccpaux_alarm_out : OUT STD_LOGIC;
-    vccddro_alarm_out : OUT STD_LOGIC;
-    ot_out : OUT STD_LOGIC;
+    vauxp0 : IN STD_LOGIC;
+    vauxn0 : IN STD_LOGIC;
     channel_out : OUT STD_LOGIC_VECTOR(4 DOWNTO 0);
     eoc_out : OUT STD_LOGIC;
     alarm_out : OUT STD_LOGIC;
@@ -120,13 +115,8 @@ your_instance_name : xadc_wiz_0
     ip2intc_irpt => ip2intc_irpt,
     vp_in => vp_in,
     vn_in => vn_in,
-    user_temp_alarm_out => user_temp_alarm_out,
-    vccint_alarm_out => vccint_alarm_out,
-    vccaux_alarm_out => vccaux_alarm_out,
-    vccpint_alarm_out => vccpint_alarm_out,
-    vccpaux_alarm_out => vccpaux_alarm_out,
-    vccddro_alarm_out => vccddro_alarm_out,
-    ot_out => ot_out,
+    vauxp0 => vauxp0,
+    vauxn0 => vauxn0,
     channel_out => channel_out,
     eoc_out => eoc_out,
     alarm_out => alarm_out,

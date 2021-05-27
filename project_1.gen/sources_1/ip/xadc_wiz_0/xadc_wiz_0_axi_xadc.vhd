@@ -190,11 +190,12 @@ entity xadc_wiz_0_axi_xadc is
    -- XADC External interface signals
 
     -- Conversion start control signal for Event driven mode
+    vauxp0          : in  STD_LOGIC;                         -- Auxiliary Channel 0
+    vauxn0          : in  STD_LOGIC;
     busy_out        : out  STD_LOGIC;                        -- ADC Busy signal
     channel_out     : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
     eoc_out         : out  STD_LOGIC;                        -- End of Conversion Signal
     eos_out         : out  STD_LOGIC;                        -- End of Sequence Signal
-    ot_out          : out STD_LOGIC;
     alarm_out       : out STD_LOGIC_VECTOR (7 downto 0);                         -- OR'ed output of all the Alarms
     vp_in           : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
     vn_in           : in  STD_LOGIC
@@ -265,11 +266,12 @@ component xadc_wiz_0_xadc_core_drp
      ---------------- interrupt interface with the system  -----------
      Interrupt_status       : out std_logic_vector(0 to IP_INTR_NUM-1);
      ----------------  sysmon macro interface  -------------------
+     vauxp0                 : in  STD_LOGIC;                         -- Auxiliary Channel 0
+     vauxn0                 : in  STD_LOGIC;
      busy_out               : out  STD_LOGIC;                        -- ADC Busy signal
      channel_out            : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
      eoc_out                : out  STD_LOGIC;                        -- End of Conversion Signal
      eos_out                : out  STD_LOGIC;                        -- End of Sequence Signal
-     ot_out                 : out STD_LOGIC;
      alarm_out              : out STD_LOGIC_VECTOR (7 downto 0);                   
      vp_in                  : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
      vn_in                  : in  STD_LOGIC
@@ -715,11 +717,12 @@ AXI_XADC_CORE_I : xadc_wiz_0_xadc_core_drp
     Sysmon_IP2Bus_RdAck          => xadc_ip2bus_rdack,
     Interrupt_status             => interrupt_status_i,
     --- external interface signals ------------------
+    vauxp0                       => vauxp0, 
+    vauxn0                       => vauxn0,
     busy_out                     => busy_out,
     channel_out                  => channel_out,
     eoc_out                      => eoc_out,
     eos_out                      => eos_out,
-    ot_out                       => ot_out,
     alarm_out                    => alarm_out,
     vp_in                        => vp_in,
     vn_in                        => vn_in

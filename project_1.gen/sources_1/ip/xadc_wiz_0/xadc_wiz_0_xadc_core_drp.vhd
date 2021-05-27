@@ -169,11 +169,12 @@ entity xadc_wiz_0_xadc_core_drp is
      ---------------- interrupt interface with the system  -----------
      Interrupt_status       : out std_logic_vector(0 to IP_INTR_NUM-1);
      ----------------  sysmon macro interface  -------------------
+     vauxp0                 : in  STD_LOGIC;                         -- Auxiliary Channel 0
+     vauxn0                 : in  STD_LOGIC;
      busy_out               : out  STD_LOGIC;                        -- ADC Busy signal
      channel_out            : out  STD_LOGIC_VECTOR (4 downto 0);    -- Channel Selection Outputs
      eoc_out                : out  STD_LOGIC;                        -- End of Conversion Signal
      eos_out                : out  STD_LOGIC;                        -- End of Sequence Signal
-     ot_out                 : out STD_LOGIC;
      alarm_out              : out STD_LOGIC_VECTOR (7 downto 0);
      vp_in                  : in  STD_LOGIC;                         -- Dedicated Analog Input Pair
      vn_in                  : in  STD_LOGIC
@@ -655,8 +656,6 @@ begin
     end if;
 end process ALARM_REG_PROCESS;
 
--- OT out to top level port
-  ot_out <= ot_i;
 
 --------------------------
 -- OT_FALLING_EDGE_DETECT: this process is used to register the OT.
@@ -918,8 +917,8 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
 --    VAUXP            which provides differential analog inputs
 --    MUXADDR       -- External address multiplexer driven by Channel selection
 --                     Registers
-        aux_channel_p(0) <= '0';
-        aux_channel_n(0) <= '0';
+        aux_channel_p(0) <= vauxp0;
+        aux_channel_n(0) <= vauxn0;
 
         aux_channel_p(1) <= '0';
         aux_channel_n(1) <= '0';
@@ -968,8 +967,8 @@ alarm_out <= alarm_reg(8 downto 1);-- updated from 2 downto 1 to 8 downto 1 for 
 
  XADC_INST : XADC
      generic map(
-        INIT_40 => X"0003", -- config reg 0
-        INIT_41 => X"31A0", -- config reg 1
+        INIT_40 => X"0010", -- config reg 0
+        INIT_41 => X"31AF", -- config reg 1
         INIT_42 => X"0400", -- config reg 2
         INIT_48 => X"0100", -- Sequencer channel selection
         INIT_49 => X"0000", -- Sequencer channel selection

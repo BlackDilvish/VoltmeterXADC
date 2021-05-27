@@ -42,7 +42,8 @@ module master #(parameter deep = 16, nb = $clog2(deep))(
     output logic [3:0] wstrb_xadc,
     output logic awvld_xadc,
     output logic wvld_xadc,
-    output logic arvld_xadc
+    output logic arvld_xadc,
+    output reg [7:0] data_out
     );
     
 typedef enum {readstatus, waitstatus, read, waitread, write, waitwrite, waitresp, command, clear} states_e;
@@ -94,6 +95,13 @@ begin
      arvld_xadc <= 1'b0;
   end
 end
+    
+always @(posedge clk, posedge rst)
+    if (rst)
+        data_out <= {8{1'b0}};
+    else if (rvld_xadc)
+        data_out <= rdat_xadc[11:4];
+        
     
 always @(posedge clk, posedge rst)
     if(rst) begin
