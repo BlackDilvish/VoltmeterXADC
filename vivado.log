@@ -4589,3 +4589,52 @@ program_hw_devices [get_hw_devices xc7z020_1]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
 INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+[Thu May 27 12:56:00 2021] Launched synth_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+[Thu May 27 12:56:39 2021] Launched impl_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Thu May 27 12:57:43 2021] Launched impl_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/runme.log
+close_hw_manager
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 3335.801 ; gain = 0.000
+connect_hw_server -url localhost:3121 -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210248722985]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210248722985]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248722985
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager

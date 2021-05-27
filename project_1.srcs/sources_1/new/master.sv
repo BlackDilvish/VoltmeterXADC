@@ -100,7 +100,7 @@ always @(posedge clk, posedge rst)
     if (rst)
         data_out <= {8{1'b0}};
     else if (rvld_xadc)
-        data_out <= rdat_xadc[11:4];
+        data_out <= rdat_xadc[15:8];
         
     
 always @(posedge clk, posedge rst)
