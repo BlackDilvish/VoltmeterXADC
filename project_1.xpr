@@ -44,7 +44,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="92"/>
+    <Option Name="WTXSimLaunchSim" Val="108"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -156,6 +156,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sim_1/new/design.txt"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="xadc_tb"/>
@@ -223,29 +224,32 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="15">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../../../BStudia/JOS/Lab/Lab2/project_1/project_1.srcs/utils_1/imports/synth_1">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z020clg484-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../../../BStudia/JOS/Lab/Lab2/project_1/project_1.srcs/utils_1/imports/synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="axi_uartlite_slave_synth_1" Type="Ft3:Synth" SrcSet="axi_uartlite_slave" Part="xc7z020clg484-1" ConstrsSet="axi_uartlite_slave" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../../../BStudia/JOS/Lab/Lab2/project_1/project_1.srcs/utils_1/imports/axi_uartlite_slave_synth_1">
+    <Run Id="axi_uartlite_slave_synth_1" Type="Ft3:Synth" SrcSet="axi_uartlite_slave" Part="xc7z020clg484-1" ConstrsSet="axi_uartlite_slave" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/axi_uartlite_slave_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../../../BStudia/JOS/Lab/Lab2/project_1/project_1.srcs/utils_1/imports/axi_uartlite_slave_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="xadc_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="xadc_wiz_0" Part="xc7z020clg484-1" ConstrsSet="xadc_wiz_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../project_1/project_1.srcs/utils_1/imports/xadc_wiz_0_synth_1">
+    <Run Id="xadc_wiz_0_synth_1" Type="Ft3:Synth" SrcSet="xadc_wiz_0" Part="xc7z020clg484-1" ConstrsSet="xadc_wiz_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/xadc_wiz_0_synth_1" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../project_1/project_1.srcs/utils_1/imports/xadc_wiz_0_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>

@@ -2,10 +2,10 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu May 20 13:19:15 2021
-# Process ID: 3300
+# Start of session at: Thu May 27 09:04:57 2021
+# Process ID: 3028
 # Current directory: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19128 C:\AGH\JOS\Projekt\Woltomierz_XADC\VoltmeterXADC\xadc_wiz_0_ex\xadc_wiz_0_ex.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2472 C:\AGH\JOS\Projekt\Woltomierz_XADC\VoltmeterXADC\xadc_wiz_0_ex\xadc_wiz_0_ex.xpr
 # Log file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex/vivado.log
 # Journal file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/xadc_wiz_0_ex\vivado.jou
 #-----------------------------------------------------------
@@ -15,4 +15,5 @@ update_compile_order -fileset sources_1
 launch_simulation
 source xadc_wiz_0_tb.tcl
 run all
-close_sim
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1

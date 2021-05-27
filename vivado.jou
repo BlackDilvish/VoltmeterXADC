@@ -2,30 +2,29 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu May 20 13:18:57 2021
-# Process ID: 24016
+# Start of session at: Thu May 27 09:04:11 2021
+# Process ID: 17064
 # Current directory: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8864 C:\AGH\JOS\Projekt\Woltomierz_XADC\VoltmeterXADC\project_1.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2584 C:\AGH\JOS\Projekt\Woltomierz_XADC\VoltmeterXADC\project_1.xpr
 # Log file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/vivado.log
 # Journal file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.xpr
 update_compile_order -fileset sources_1
+add_files -norecurse C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/design.txt
+export_ip_user_files -of_objects  [get_files C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/design.txt] -no_script -reset -force -quiet
+remove_files  C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/design.txt
 set_property SOURCE_SET sources_1 [get_filesets sim_1]
-close [ open C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv w ]
-add_files -fileset sim_1 C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv
-update_compile_order -fileset sim_1
+add_files -fileset sim_1 -norecurse C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/design.txt
 launch_simulation
-source tb.tcl
+source xadc_tb.tcl
+run all
 close_sim
-# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
-set_property source_mgmt_mode None [current_project]
-set_property top xadc_tb [get_filesets sim_1]
-set_property top_lib xil_defaultlib [get_filesets sim_1]
-# Re-enabling previously disabled source management mode.
-set_property source_mgmt_mode All [current_project]
-update_compile_order -fileset sim_1
+launch_simulation
+source xadc_tb.tcl
+run all
+close_sim
 launch_simulation
 source xadc_tb.tcl
 run all
@@ -34,8 +33,40 @@ run all
 close_sim
 launch_simulation
 source xadc_tb.tcl
+run all
+close_sim
+launch_simulation
+source xadc_tb.tcl
+run all
 relaunch_sim
 run all
+close_sim
+launch_simulation
+source xadc_tb.tcl
+run all
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_sim
+launch_simulation
+source xadc_tb.tcl
 run all
 run all
 close_sim
+launch_simulation
+source xadc_tb.tcl
+run all
+close_sim
+launch_simulation
+source xadc_tb.tcl
+run all
+close_sim
+launch_simulation
+source xadc_tb.tcl
+run all
+close_sim
+launch_simulation
+source xadc_tb.tcl
+run all

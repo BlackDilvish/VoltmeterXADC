@@ -23,7 +23,7 @@
 module xadc_tb();
 
 // timescale is 1ps/1ps
-localparam  ONE_NS      = 1000;
+localparam  ONE_NS      = 1;
 integer    count       = 0   ;
 localparam time PER1    = 10*ONE_NS;
 // Declare the input clock signals
@@ -62,10 +62,10 @@ end*/
 initial
 begin
   $display ("Timing checks are not valid");
-  #1 rst = 1'b1;
+  assign rst = 1'b1;
   #(10*PER1);
   #(100*ONE_NS);
-  #1 rst = 1'b0;
+  assign rst = 1'b0;
   #(2*PER1);
   #(10*PER1);
   $display ("Timing checks are valid");
@@ -75,11 +75,11 @@ begin
   @(negedge uut.m_axi.eoc);
   @(posedge uut.m_axi.eoc);
   @(negedge uut.m_axi.eoc);
-  @(posedge uut.m_axi.arvld_xadc);
-  @(negedge uut.m_axi.arvld_xadc);
+  @(posedge uut.m_axi.rvld_xadc);
+  @(negedge uut.m_axi.rvld_xadc);
     $display ("This TB supports CONSTANT Waveform comaprision. User should compare the analog input and digital output for SIN, TRAINGLE, SQUARE waves !!") ;
     $display ("Waiting for Analog Waveform to complete !!") ;
-    #(1000480000.0);
+    #(3000000.0);
   $display("SYSTEM_CLOCK_COUNTER : %0d\n",$time/PER1);
   $display ("Test Completed Successfully");
   $finish;
@@ -87,7 +87,7 @@ end
 
 reg [11:0] Analog_Wave_Single_Ch;
 
-always @ (posedge s_axi_aclk)
+always @ (posedge clk)
 begin
   if (uut.m_axi.rvld_xadc)
     Analog_Wave_Single_Ch <= uut.m_axi.rdat_xadc[15:4];

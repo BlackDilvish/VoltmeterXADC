@@ -31,8 +31,10 @@ wire [4:0] channel_out;
 wire [3 : 0] s_axi_awaddr,s_axi_araddr;
 wire [31 : 0] s_axi_wdata, s_axi_wdata_xadc, s_axi_rdata, s_axi_rdata_xadc;
 wire [3 : 0] s_axi_wstrb = 4'b1111; 
-wire [3 : 0] s_axi_wstrb_xadc = 4'b1111;
+reg [3 : 0] s_axi_wstrb_xadc;
 wire [1 : 0] s_axi_rresp, s_axi_bresp, s_axi_bresp_xadc, s_axi_rresp_xadc;
+logic [$clog2(mdeep)-1:0] adr;
+logic [7:0] dato, dati;
 
 //xadc
 wire [10 : 0] s_axi_awaddr_xadc,s_axi_araddr_xadc;
@@ -66,9 +68,6 @@ axi_uartlite_slave slave (
   .rx(rx),                        // input wire rx
   .tx(tx)                        // output wire tx
 );
-    
-logic [$clog2(mdeep)-1:0] adr;
-logic [7:0] dato, dati;
     
 master #(.deep(mdeep)) m_axi (
     .clk(clk), .rst(rst),
@@ -107,17 +106,17 @@ xadc_wiz_0 adc_axi (
   .s_axi_aclk(clk),                    // input wire s_axi_aclk
   .s_axi_aresetn(~rst),              // input wire s_axi_aresetn
   .s_axi_awaddr(s_axi_awaddr_xadc),                // input wire [10 : 0] s_axi_awaddr
-  .s_axi_awvalid(s_axi_awvalid),              // input wire s_axi_awvalid
+  .s_axi_awvalid(s_axi_awvalid_xadc),              // input wire s_axi_awvalid
   .s_axi_awready(s_axi_awready_xadc),              // output wire s_axi_awready
   .s_axi_wdata(s_axi_wdata_xadc),                  // input wire [31 : 0] s_axi_wdata
   .s_axi_wstrb(s_axi_wstrb_xadc),                  // input wire [3 : 0] s_axi_wstrb
-  .s_axi_wvalid(s_axi_wvalid),                // input wire s_axi_wvalid
+  .s_axi_wvalid(s_axi_wvalid_xadc),                // input wire s_axi_wvalid
   .s_axi_wready(s_axi_wready_xadc),                // output wire s_axi_wready
   .s_axi_bresp(s_axi_bresp_xadc),                  // output wire [1 : 0] s_axi_bresp
   .s_axi_bvalid(s_axi_bvalid_xadc),                // output wire s_axi_bvalid
   .s_axi_bready(s_axi_bready),                // input wire s_axi_bready
   .s_axi_araddr(s_axi_araddr_xadc),                // input wire [10 : 0] s_axi_araddr
-  .s_axi_arvalid(s_axi_arvalid),              // input wire s_axi_arvalid
+  .s_axi_arvalid(s_axi_arvalid_xadc),              // input wire s_axi_arvalid
   .s_axi_arready(s_axi_arready_xadc),              // output wire s_axi_arready
   .s_axi_rdata(s_axi_rdata_xadc),                  // output wire [31 : 0] s_axi_rdata
   .s_axi_rresp(s_axi_rresp_xadc),                  // output wire [1 : 0] s_axi_rresp
