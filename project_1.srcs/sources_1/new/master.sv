@@ -183,7 +183,7 @@ always @(posedge clk, posedge rst)
     if(rst)
         data_rec <= 8'b0;
     else if (incar)
-        data_rec <= rdat[7:0];
+        data_rec <= int'(transcode(rdat_xadc[15:4])*50);//rdat[7:0];
 //memory write 
 always @(posedge clk)   //, posedge rst)
     if(rst)
@@ -241,3 +241,14 @@ always @(posedge clk)   //, posedge rst)
         rd <= (st == write); 
 
 endmodule
+
+function real transcode(input [11:0] code);
+        automatic reg [11:0] mask = 12'b100000000000;
+        integer i;
+        begin
+            transcode = 0.0;
+            for(i = 0; i < 12; i = i + 1)
+                if(code & (mask >> i))
+                    transcode += (3.3 / (2 ** (i + 1)));
+        end
+endfunction

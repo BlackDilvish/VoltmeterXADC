@@ -86,12 +86,14 @@ end
 
 reg [11:0] Analog_Wave_Single_Ch;
 real voltage = 0;
+integer i_voltage = 0;
 
 always @ (posedge clk)
 begin
   if (uut.m_axi.rvld_xadc) begin
     Analog_Wave_Single_Ch <= uut.m_axi.rdat_xadc[15:4];
     voltage = transcode(Analog_Wave_Single_Ch);
+    i_voltage = int'(voltage*100);
     end
 end 
 
