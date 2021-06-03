@@ -27,7 +27,7 @@ module master #(parameter deep = 16, nb = $clog2(deep))(
     input [1:0] brsp, input bvld, output logic brdy,
     output logic [10:0] radr_xadc, output logic [3:0] radr, output logic arvld, input arrdy,
     input [31:0] rdat, input rvld, output logic rrdy,
-    output [nb-1:0] mem_addr, input [7:0] data_tr, output logic [7:0] data_rec,
+    output logic [nb-1:0] addr, input [7:0] data_tr, output logic [7:0] data_rec,
     output logic rd, wr,
     input [31:0] rdat_xadc,
     input bvld_xadc,
@@ -45,31 +45,24 @@ module master #(parameter deep = 16, nb = $clog2(deep))(
     output logic arvld_xadc,
     output reg [7:0] data_out
     );
-    
-typedef enum {readstatus, waitstatus, read, waitread, write, waitwrite, waitresp, command, clear} states_e;
+
+typedef enum {readstatus, waitstatus, read, waitread, write, waitwrite, waitresp, clear} states_e;
 states_e st, nst;
-
-
-logic rec_trn, command_mode;
-logic [5:0] max_data;
-logic [nb-1:0] addr;
 
 wire addr0 = (addr ==  {nb{1'b0}});
 wire rfifo_valid = (st == waitstatus & rvld) ? rdat[0] : 1'b0;
 wire tfifo_full = (st == waitstatus & rvld) ? rdat[3] : 1'b0;
+logic rec_trn;
+wire inca = ((st == waitread) & rvld & rec_trn);
+wire deca = ((st == waitwrite) & awrdy & ~rec_trn); //wrdy
 
-wire incar = ((st == waitread) & rvld & rec_trn & (addr < max_data));
-wire incat = ((st == waitwrite) & awrdy & ~rec_trn & (addr < max_data));
-//wire deca = ((st == waitwrite) & awrdy & ~rec_trn); //wrdy
-
-
-/*always @(posedge clk, posedge rst)
+always @(posedge clk, posedge rst)
     if(rst)
         rec_trn <= 1'b1;
     else if(addr == deep)
         rec_trn <= 1'b0;
     else if(st == clear)
-        rec_trn <= 1'b1;*/
+        rec_trn <= 1'b1;
         
 always @(posedge clk, posedge rst)
 begin
@@ -104,21 +97,6 @@ always @(posedge clk, posedge rst)
         
     
 always @(posedge clk, posedge rst)
-    if(rst) begin
-        {rec_trn, command_mode} <= 2'b11;
-        max_data <= 6'b0; end
-    else if (st == command) begin
-        {rec_trn, command_mode} <= 2'b11;
-        max_data = rdat[5:0];
-        case(rdat[7:6])
-            2'b10: command_mode <= (rdat[5:0] == 6'b0) ? 1'b1 : 1'b0;
-            2'b11: rec_trn <= 1'b0;
-        endcase end
-    else if (st == waitresp & addr == max_data)
-        {rec_trn, command_mode} <= 2'b11;
-        
-     
-always @(posedge clk, posedge rst)
     if(rst)
         st <= readstatus;
     else //if(addr == deep)
@@ -133,8 +111,7 @@ always_comb begin
                     else
                         nst = tfifo_full ? readstatus : (rvld ? write : waitstatus);
         read: nst = waitread;
-        waitread: nst = rvld ? (rdat[7] == 1 ? command : readstatus) : waitread;
-        command: nst = readstatus;
+        waitread: nst = rvld ? readstatus : waitread;
         write: nst = waitwrite;
         waitwrite: nst = awrdy ? waitresp : waitwrite;
         waitresp: nst = bvld ?addr0 ?clear : readstatus : waitresp;
@@ -142,15 +119,15 @@ always_comb begin
      endcase
 end
    
-assign mem_addr = rec_trn ? addr : (addr + 1);
+    
 always @(posedge clk, posedge rst)
     if(rst)
         addr <= {nb{1'b0}};
-    else if(incar | incat)
+    else if(inca)
         addr <= addr + 1;
-    /*else if(deca)
-        addr <= addr - 1;*/
-    else if (st == clear | st == command)
+    else if(deca)
+        addr <= addr - 1;
+    else if (st == clear)
         addr <= {nb{1'b0}};
 
 //Receiver control
@@ -182,14 +159,14 @@ always @(posedge clk, posedge rst)
 always @(posedge clk, posedge rst)
     if(rst)
         data_rec <= 8'b0;
-    else if (incar)
+    else if (inca)
         data_rec <= int'(transcode(rdat_xadc[15:4])*50);//rdat[7:0];
 //memory write 
 always @(posedge clk)   //, posedge rst)
     if(rst)
         wr <= 1'b0;
     else 
-        wr <= incar;
+        wr <= inca;
 
 //Transmitter control       
 //-------------------------------------------------------
@@ -243,12 +220,13 @@ always @(posedge clk)   //, posedge rst)
 endmodule
 
 function real transcode(input [11:0] code);
+        real max_voltage = 3.3;
         automatic reg [11:0] mask = 12'b100000000000;
         integer i;
         begin
             transcode = 0.0;
             for(i = 0; i < 12; i = i + 1)
                 if(code & (mask >> i))
-                    transcode += (3.3 / (2 ** (i + 1)));
+                    transcode += (max_voltage / (2 ** (i + 1)));
         end
 endfunction

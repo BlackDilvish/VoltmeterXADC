@@ -76,7 +76,7 @@ master #(.deep(mdeep)) m_axi (
     .brsp(s_axi_bresp), .bvld(s_axi_bvalid), .brdy(s_axi_bready),
     .radr(s_axi_araddr), .arvld(s_axi_arvalid), .arrdy(s_axi_arready),
     .rdat(s_axi_rdata), .rvld(s_axi_rvalid), .rrdy(s_axi_rready),
-    .mem_addr(adr), .data_tr(dato), .data_rec(dati),
+    .addr(adr), .data_tr(dato), .data_rec(dati),
     .rd(rd), .wr(wr),
     .eoc(eoc_out),
     .rdat_xadc(s_axi_rdata_xadc),
