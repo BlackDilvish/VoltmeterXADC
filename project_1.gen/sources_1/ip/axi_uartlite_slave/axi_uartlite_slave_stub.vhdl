@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
--- Date        : Thu May 27 10:07:09 2021
--- Host        : MSI running 64-bit major release  (build 9200)
+-- Date        : Sat Jun  5 19:38:02 2021
+-- Host        : DESKTOP-HGA1Q8G running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               c:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.gen/sources_1/ip/axi_uartlite_slave/axi_uartlite_slave_stub.vhdl
+--               d:/JOS/prototyp_2/project_1.gen/sources_1/ip/axi_uartlite_slave/axi_uartlite_slave_stub.vhdl
 -- Design      : axi_uartlite_slave
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1
