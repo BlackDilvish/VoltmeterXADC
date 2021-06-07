@@ -72,7 +72,7 @@ initial begin
     $display("Received by UART model: %h", receiver.rec_mem);    
 
     for(index = 1; index < 21; index = index + 1) begin
-        $display(map_between_ranges(0, 255, 0, 330, receiver.rec_mem[index]) * 10);
+        $display(receiver.rec_mem[index] * 16);
     end
     
     #1000 $finish();

@@ -227,17 +227,18 @@ function integer transcode(input[11:0] code);
     integer max_voltage = 3300;
     automatic reg [11:0] mask = 12'b1000_0000_0000;
     integer i;
-    integer unmapped;
+    //integer unmapped;
         begin
             transcode = 0;
             for(i = 0; i < 12; i = i + 1)
                 if(code & (mask >> i))
                     transcode += max_voltage / (2 ** (i + 1));  
-           transcode /= 10;
-           //$display("Before = %d", code);
-           //$display("Transcode = %d", transcode);         
-           unmapped = transcode;       
-           transcode = map_between_ranges(0, 330, 0, 255, transcode);
+           //transcode /= 10;
+           $display("Before = %d", transcode);
+           transcode = transcode >> 4;
+           $display("After = %d", transcode);         
+           //unmapped = transcode;       
+           //transcode = map_between_ranges(0, 3300, 0, 255, transcode);
            //$display("Mapped = %d", transcode);
         end    
 endfunction    
