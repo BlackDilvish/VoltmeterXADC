@@ -25,6 +25,7 @@ localparam d = 20, hp = 5, fclk = 100_000_000, br = 230400, size = 8;
 localparam ratio = fclk / br - 1;
 logic clk, rst, strt, strr, vauxp0, vauxn0;
 wire fint, finr;
+integer index;
 
 top #(.mdeep(d)) uut (.clk(clk), .rst(rst), .rx(rx), .tx(tx), .vauxp0(vauxp0), .vauxn0(vauxn0));
 //simple_reciver
@@ -67,19 +68,20 @@ initial begin
     repeat(d) @(negedge fint);
     $display("Received by FPGA: %h", uut.storage.mem);
     $display("Send by UART model: %h", transmitter.tr_mem);
-    if(uut.storage.mem == transmitter.tr_mem)
-        $display("Success");
-    else
-        $display("Fail");
-        
     repeat(d) @(negedge finr);
-    $display("Received by UART model: %h", receiver.rec_mem);
-    if(transmitter.tr_mem == receiver.rec_mem)
-        $display("Success");
-    else
-        $display("Fail");
+    $display("Received by UART model: %h", receiver.rec_mem);    
+
+    for(index = 1; index < 21; index = index + 1) begin
+        $display(map_between_ranges(0, 255, 0, 330, receiver.rec_mem[index]) * 10);
+    end
     
     #1000 $finish();
 end
+
+function integer map_between_ranges(integer start_range_input, end_range_input,
+start_range_output, end_range_output, value);
+    map_between_ranges = start_range_input + 1000 * (end_range_output - start_range_output) / 
+    (end_range_input - start_range_input) * (value - start_range_input) / 1000;
+endfunction
 
 endmodule

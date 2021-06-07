@@ -160,10 +160,7 @@ always @(posedge clk, posedge rst)
     if(rst)
         data_rec <= 8'b0;
     else if (inca)
-    begin
-            data_rec <= (transcode(rdat_xadc[15:4])*50);//rdat[7:0];
-            //tcode(rdat_xadc[15:4]);
-    end
+        data_rec <= (transcode(rdat_xadc[15:4]));//rdat[7:0];
 //memory write 
 always @(posedge clk)   //, posedge rst)
     if(rst)
@@ -220,7 +217,6 @@ always @(posedge clk)   //, posedge rst)
     else 
         rd <= (st == write); 
 
-//mapowanie na podstawie: https://stackoverflow.com/a/5732390
 function integer map_between_ranges(integer start_range_input, end_range_input,
 start_range_output, end_range_output, value);
     map_between_ranges = start_range_input + 1000 * (end_range_output - start_range_output) / 
@@ -229,7 +225,7 @@ endfunction
 
 function integer transcode(input[11:0] code);
     integer max_voltage = 3300;
-    automatic reg [11:0] mask = 12'b100_000_000_000;
+    automatic reg [11:0] mask = 12'b1000_0000_0000;
     integer i;
     integer unmapped;
         begin
@@ -238,31 +234,13 @@ function integer transcode(input[11:0] code);
                 if(code & (mask >> i))
                     transcode += max_voltage / (2 ** (i + 1));  
            transcode /= 10;
-           $display("Before = %d", code);
-           // tcode(code);
-           $display("Transcode = %d", transcode);         
+           //$display("Before = %d", code);
+           //$display("Transcode = %d", transcode);         
            unmapped = transcode;       
            transcode = map_between_ranges(0, 330, 0, 255, transcode);
-           $display("Mapped = %d", transcode);
-           // $display("Proportion_transcode=%f", unmapped / 330.0);
-           // $display("Proportion_mapped=%f", transcode / 255.0);
+           //$display("Mapped = %d", transcode);
         end    
-endfunction
-      
-/*function real tcode(input [11:0] code);
-        real max_voltage = 3.3;
-        automatic reg [11:0] mask = 12'b100000000000;
-        integer i;
-        begin
-            tcode = 0.0;
-            for(i = 0; i < 12; i = i + 1)
-                if(code & (mask >> i))
-                    tcode += (max_voltage / (2 ** (i + 1)));
-        
-            $display("tcode = %f", tcode);
-        end
-endfunction*/       
-
+endfunction    
 
 endmodule
 
