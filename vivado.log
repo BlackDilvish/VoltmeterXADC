@@ -2,120 +2,434 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Jun  5 19:34:03 2021
-# Process ID: 14460
-# Current directory: D:/JOS/prototyp_2
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18232 D:\JOS\prototyp_2\project_1.xpr
-# Log file: D:/JOS/prototyp_2/vivado.log
-# Journal file: D:/JOS/prototyp_2\vivado.jou
+# Start of session at: Thu Jun 10 10:14:21 2021
+# Process ID: 24440
+# Current directory: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11020 C:\AGH\JOS\Projekt\Woltomierz_XADC\VoltmeterXADC\project_1.xpr
+# Log file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/vivado.log
+# Journal file: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project D:/JOS/prototyp_2/project_1.xpr
-INFO: [Project 1-313] Project file moved from 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC' since last save.
+open_project C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.xpr
 Scanning sources...
 Finished scanning sources
-WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'axi_uartlite_slave_synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'xadc_wiz_0_synth_1' not found
-WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2020.2/data/ip'.
-open_project: Time (s): cpu = 00:00:23 ; elapsed = 00:00:09 . Memory (MB): peak = 1017.750 ; gain = 0.000
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
 update_compile_order -fileset sources_1
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1014.242 ; gain = 0.000
+connect_hw_server -url localhost:3121 -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210248722985]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210248722985]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248722985
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_1]
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210248722985
+close_hw_manager
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 2419.340 ; gain = 0.000
+connect_hw_server -url localhost:3121 -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210248AA5869]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210248AA5869]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248AA5869
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_0]
+current_hw_device [get_hw_devices xc7z020_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_0] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_0]
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_0]
+program_hw_devices [get_hw_devices xc7z020_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_0] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210248AA5869
+close_hw_manager
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+ERROR: [Labtoolstcl 44-494] There is no active target available for server at TCP:localhost:3121.
+ Targets(s) ", jsn-Zed-210248AA3E0Ejsn-Zed-210248AA5869" may be locked by another hw_server.
+close_hw_manager
 launch_simulation
 Command: launch_simulation 
 INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
-INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
 INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
 INFO: [SIM-utils-51] Simulation object is 'sim_1'
 INFO: [USF-XSim-7] Finding pre-compiled libraries...
-INFO: [USF-XSim-11] File 'D:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
 INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
-INFO: [SIM-utils-43] Exported 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim/tr_init.mem'
-INFO: [SIM-utils-43] Exported 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim/tr_init.mem'
-INFO: [SIM-utils-43] Exported 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
 INFO: [USF-XSim-97] Finding global include files...
 INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
 INFO: [USF-XSim-2] XSim::Compile design
-INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
 "xvlog --incr --relax -L uvm -prj tb_vlog.prj"
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module xadc_wiz_0
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/JOS/prototyp_2/project_1.srcs/sources_1/new/master.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module master
-WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/master.sv:231]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/JOS/prototyp_2/project_1.srcs/sources_1/new/memory.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module memory
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/JOS/prototyp_2/project_1.srcs/sim_1/new/simple_receiver.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module simple_receiver
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/JOS/prototyp_2/project_1.srcs/sim_1/new/simple_transmitter.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module simple_transmitter
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module top
-INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:47]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_awready, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:48]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:52]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_wready, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:53]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:56]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_bready, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:57]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:60]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_arready, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:61]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:65]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_rready, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:66]
-INFO: [VRFC 10-2458] undeclared symbol rd, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:80]
-INFO: [VRFC 10-2458] undeclared symbol wr, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:80]
-INFO: [VRFC 10-2458] undeclared symbol eoc_out, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:81]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:83]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:84]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_awready_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:85]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_arready_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:86]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_wready_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:88]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:93]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:94]
-INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid_xadc, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:95]
-INFO: [VRFC 10-2458] undeclared symbol ip2intc_irpt, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:126]
-INFO: [VRFC 10-2458] undeclared symbol alarm_out, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:133]
-INFO: [VRFC 10-2458] undeclared symbol eos_out, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:134]
-INFO: [VRFC 10-2458] undeclared symbol busy_out, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sources_1/new/top.sv:135]
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/JOS/prototyp_2/project_1.srcs/sim_1/new/tb.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb
-INFO: [VRFC 10-2458] undeclared symbol rx, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sim_1/new/tb.sv:29]
-INFO: [VRFC 10-2458] undeclared symbol tx, assumed default net type wire [D:/JOS/prototyp_2/project_1.srcs/sim_1/new/tb.sv:29]
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl
 "xvhdl --incr --relax -prj tb_vhdl.prj"
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_conv_funs_pkg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_proc_common_pkg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_ipif_pkg.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_family_support.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_family.vhd" into library xil_defaultlib
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_soft_reset.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_soft_reset'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/proc_common_v3_30_a/hdl/src/vhdl/xadc_wiz_0_pselect_f.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_pselect_f'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/xadc_wiz_0_address_decoder.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_address_decoder'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/xadc_wiz_0_slave_attachment.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_slave_attachment'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/interrupt_control_v2_01_a/hdl/src/vhdl/xadc_wiz_0_interrupt_control.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_interrupt_control'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/axi_lite_ipif_v1_01_a/hdl/src/vhdl/xadc_wiz_0_axi_lite_ipif.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_axi_lite_ipif'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0_xadc_core_drp.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_xadc_core_drp'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/xadc_wiz_0/xadc_wiz_0_axi_xadc.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'xadc_wiz_0_axi_xadc'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/JOS/prototyp_2/project_1.gen/sources_1/ip/axi_uartlite_slave/sim/axi_uartlite_slave.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'axi_uartlite_slave'
-run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1017.750 ; gain = 0.000
-INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
 INFO: [USF-XSim-3] XSim::Elaborate design
-INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
 "xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log"
 Vivado Simulator 2020.2
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: D:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Start sending at:               585000 ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 2478.684 ; gain = 37.941
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 2478.684 ; gain = 0.000
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_vlog.prj"
+"xvhdl --incr --relax -prj tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Start sending at:               585000 ns
+relaunch_sim: Time (s): cpu = 00:00:04 ; elapsed = 00:00:15 . Memory (MB): peak = 2491.758 ; gain = 13.074
+run all
+Before =        2077
+After =         129
+Before =        2506
+After =         156
+Before =        2902
+After =         181
+Before =        3165
+After =         197
+Before =        3294
+After =         205
+Before =        3263
+After =         203
+Before =        3100
+After =         193
+Before =        2802
+After =         175
+Before =        2406
+After =         150
+Before =        1944
+After =         121
+Before =        1450
+After =          90
+Before =         988
+After =          61
+Before =         591
+After =          36
+Before =         261
+After =          16
+Before =          63
+After =           3
+Before =           0
+After =           0
+Before =          95
+After =           5
+Before =         327
+After =          20
+Before =         690
+After =          43
+Before =        1119
+After =          69
+Received by FPGA: 819cb5c5cdcbc1af96795a3d2410030005142b45
+Send by UART model: 2346890102030405060702018075c5556677334b
+Received by UART model: 819cb5c5cdcbc1af96795a3d2410030005142b45
+      2064
+      2496
+      2896
+      3152
+      3280
+      3248
+      3088
+      2800
+      2400
+      1936
+      1440
+       976
+       576
+       256
+        48
+         0
+        80
+       320
+       688
+      1104
+$finish called at time : 1814995 ns : File "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/tb.sv" Line 78
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2492.133 ; gain = 0.375
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 2507.605 ; gain = 0.000
+connect_hw_server -url localhost:3121 -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210248AA5869]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210248AA5869]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248AA5869
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_0]
+current_hw_device [get_hw_devices xc7z020_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_0] 0]
+INFO: [Labtools 27-1435] Device xc7z020 (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z020_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_0]
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_0]
+program_hw_devices [get_hw_devices xc7z020_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_0] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Thu Jun 10 12:17:12 2021] Launched synth_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/synth_1/runme.log
+[Thu Jun 10 12:17:12 2021] Launched impl_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/runme.log
+open_hw_manager
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2020.2
+  ****** Build date   : Nov 03 2020-22:02:56
+    **** Build number : 2020.2.1604437376
+      ** Copyright 2017-2020 Xilinx, Inc. All Rights Reserved.
+
+
+
+connect_hw_server: Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 2518.398 ; gain = 0.000
+connect_hw_server -url localhost:3121 -allow_non_jtag
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042
+INFO: [Labtools 27-3414] Connected to existing cs_server.
+current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210248AA5869]
+set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210248AA5869]
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248AA5869
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_0]
+current_hw_device [get_hw_devices xc7z020_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_0] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_0]
+set_property PROGRAM.FILE {C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/top.bit} [get_hw_devices xc7z020_0]
+program_hw_devices [get_hw_devices xc7z020_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z020_0] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw_manager
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/synth_1
+
+launch_runs synth_1 -jobs 8
+[Thu Jun 10 12:51:30 2021] Launched synth_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+[Thu Jun 10 13:06:04 2021] Launched impl_1...
+Run output will be captured here: C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 2816.234 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 25 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.2
+open_run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2827.430 ; gain = 295.203
+INFO: [Common 17-344] 'open_run' was cancelled
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master
+WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv:221]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/simple_receiver.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simple_receiver
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/simple_transmitter.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module simple_transmitter
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:47]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:48]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:52]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:53]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:56]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:57]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:60]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:61]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:65]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:66]
+INFO: [VRFC 10-2458] undeclared symbol rd, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol wr, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol eoc_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:81]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:83]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:84]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:85]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:86]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:88]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:93]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:94]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:95]
+INFO: [VRFC 10-2458] undeclared symbol ip2intc_irpt, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:126]
+INFO: [VRFC 10-2458] undeclared symbol alarm_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:133]
+INFO: [VRFC 10-2458] undeclared symbol eos_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:134]
+INFO: [VRFC 10-2458] undeclared symbol busy_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:135]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2458] undeclared symbol rx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/tb.sv:30]
+INFO: [VRFC 10-2458] undeclared symbol tx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/tb.sv:30]
+"xvhdl --incr --relax -prj tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -213,13 +527,13 @@ Built simulation snapshot tb_behav
   **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
-source D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sat Jun  5 19:35:52 2021. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Sat Jun  5 19:35:52 2021...
-run_program: Time (s): cpu = 00:00:02 ; elapsed = 00:00:18 . Memory (MB): peak = 1017.750 ; gain = 0.000
-INFO: [USF-XSim-69] 'elaborate' step finished in '18' seconds
+source C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/xsim.dir/tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Jun 10 13:14:16 2021. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Jun 10 13:14:16 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 2827.430 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '13' seconds
 INFO: [USF-XSim-4] XSim::Simulate design
-INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/JOS/prototyp_2/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
 INFO: [USF-XSim-98] *** Running xsim
    with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
 INFO: [USF-XSim-8] Loading simulator feature
@@ -237,82 +551,622 @@ source tb.tcl
 # }
 # run 1000ns
 Start sending at:               585000 ns
-xsim: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1017.750 ; gain = 0.000
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
-launch_simulation: Time (s): cpu = 00:00:22 ; elapsed = 00:00:31 . Memory (MB): peak = 1017.750 ; gain = 0.000
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:22 . Memory (MB): peak = 2850.785 ; gain = 23.355
 run all
-Before = 2580
-Transcode =         207
-Mapped =         159
-Before = 3112
-Transcode =         250
-Mapped =         193
-Before = 3604
-Transcode =         290
-Mapped =         223
-Before = 3932
-Transcode =         316
-Mapped =         243
-Before = 4095
-Transcode =         329
-Mapped =         253
-Before = 4055
-Transcode =         326
-Mapped =         251
-Before = 3850
-Transcode =         310
-Mapped =         239
-Before = 3481
-Transcode =         280
-Mapped =         216
-Before = 2990
-Transcode =         240
-Mapped =         185
-Before = 2416
-Transcode =         194
-Mapped =         149
-Before = 1802
-Transcode =         145
-Mapped =         111
-Before = 1228
-Transcode =          98
-Mapped =          75
-Before =  737
-Transcode =          59
-Mapped =          45
-Before =  327
-Transcode =          26
-Mapped =          20
-Before =   81
-Transcode =           6
-Mapped =           4
-Before =    0
-Transcode =           0
-Mapped =           0
-Before =  122
-Transcode =           9
-Mapped =           6
-Before =  409
-Transcode =          32
-Mapped =          24
-Before =  860
-Transcode =          69
-Mapped =          53
-Before = 1392
-Transcode =         111
-Mapped =          85
-Received by FPGA: 0eb28e766a06ae30221aaea6cae8c8002cb05a9a
+Received by FPGA: 272f363b3e3d3a342d241b120b04010001060c15
 Send by UART model: 2346890102030405060702018075c5556677334b
-Fail
-Received by UART model: 0eb28e766a06ae30221aaea6cae8c8002cb05a9a
-Fail
-$finish called at time : 1814995 ns : File "D:/JOS/prototyp_2/project_1.srcs/sim_1/new/tb.sv" Line 82
-run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1017.750 ; gain = 0.000
-launch_runs synth_1 -jobs 4
-[Sat Jun  5 19:36:51 2021] Launched axi_uartlite_slave_synth_1, xadc_wiz_0_synth_1...
-Run output will be captured here:
-axi_uartlite_slave_synth_1: D:/JOS/prototyp_2/project_1.runs/axi_uartlite_slave_synth_1/runme.log
-xadc_wiz_0_synth_1: D:/JOS/prototyp_2/project_1.runs/xadc_wiz_0_synth_1/runme.log
-[Sat Jun  5 19:36:51 2021] Launched synth_1...
-Run output will be captured here: D:/JOS/prototyp_2/project_1.runs/synth_1/runme.log
+Received by UART model: 272f363b3e3d3a342d241b120b04010001060c15
+       624
+       752
+       864
+       944
+       992
+       976
+       928
+       832
+       720
+       576
+       432
+       288
+       176
+        64
+        16
+         0
+        16
+        96
+       192
+       336
+$finish called at time : 1814995 ns : File "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/tb.sv" Line 78
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2850.785 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+set_property top xadc_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'xadc_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj xadc_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master
+WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv:221]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:47]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:48]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:52]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:53]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:56]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:57]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:60]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:61]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:65]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:66]
+INFO: [VRFC 10-2458] undeclared symbol rd, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol wr, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol eoc_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:81]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:83]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:84]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:85]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:86]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:88]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:93]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:94]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:95]
+INFO: [VRFC 10-2458] undeclared symbol ip2intc_irpt, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:126]
+INFO: [VRFC 10-2458] undeclared symbol alarm_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:133]
+INFO: [VRFC 10-2458] undeclared symbol eos_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:134]
+INFO: [VRFC 10-2458] undeclared symbol busy_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:135]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xadc_tb
+INFO: [VRFC 10-2458] undeclared symbol rx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:34]
+INFO: [VRFC 10-2458] undeclared symbol tx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:34]
+"xvhdl --incr --relax -prj xadc_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package axi_lite_ipif_v3_0_4.ipif_pkg
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package lib_pkg_v1_0_2.lib_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_ipif_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_proc_common_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_family_support
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.baudrate [\baudrate(c_ratio=27)\]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_mtbf_stages=4)\]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.cntr_incr_decr_addn_f [\cntr_incr_decr_addn_f(c_size=5,...]
+Compiling architecture behavioral of entity lib_srl_fifo_v1_0_2.dynshreg_f [\dynshreg_f(c_depth=16,c_dwidth=...]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.srl_fifo_rbu_f [\srl_fifo_rbu_f(c_dwidth=8,c_fam...]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.srl_fifo_f [\srl_fifo_f(c_dwidth=8,c_family=...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_rx [\uartlite_rx(c_family="zynq")(1,...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_tx [\uartlite_tx(c_family="zynq")(1,...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_core [\uartlite_core(c_family="zynq",c...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.address_decoder [\address_decoder(c_bus_awidth=4,...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.slave_attachment [\slave_attachment(c_ard_addr_ran...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.axi_lite_ipif [\axi_lite_ipif(c_s_axi_addr_widt...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.axi_uartlite [\axi_uartlite(c_family="zynq",c_...]
+Compiling architecture axi_uartlite_slave_arch of entity xil_defaultlib.axi_uartlite_slave [axi_uartlite_slave_default]
+Compiling module xil_defaultlib.master(deep=20)
+Compiling module xil_defaultlib.memory(deep=20)
+Compiling architecture implementation of entity xil_defaultlib.xadc_wiz_0_interrupt_control [\xadc_wiz_0_interrupt_control(c_...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=5,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=1,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_address_decoder [\xadc_wiz_0_address_decoder(c_bu...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_slave_attachment [\xadc_wiz_0_slave_attachment(c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_axi_lite_ipif [\xadc_wiz_0_axi_lite_ipif(c_s_ax...]
+Compiling architecture xadc_v of entity unisim.XADC [\XADC(init_40="0000000000010000"...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_xadc_core_drp [\xadc_wiz_0_xadc_core_drp(c_s_ax...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111001010")(0...]
+Compiling architecture fdrse_v of entity unisim.FDRSE [fdrse_default]
+Compiling architecture implementation of entity xil_defaultlib.xadc_wiz_0_soft_reset [\xadc_wiz_0_soft_reset(c_reset_w...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_axi_xadc [\xadc_wiz_0_axi_xadc(1,19)(1,7)(...]
+Compiling module xil_defaultlib.xadc_wiz_0
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.xadc_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot xadc_tb_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/xsim.dir/xadc_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/xsim.dir/xadc_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Jun 10 13:33:11 2021. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Jun 10 13:33:11 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 2850.785 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '12' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "xadc_tb_behav -key {Behavioral:sim_1:Functional:xadc_tb} -tclbatch {xadc_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+source xadc_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Timing checks are not valid
+Timing checks are valid
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'xadc_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:19 . Memory (MB): peak = 2866.309 ; gain = 15.523
+run all
+This TB supports CONSTANT Waveform comaprision. User should compare the analog input and digital output for SIN, TRAINGLE, SQUARE waves !!
+Waiting for Analog Waveform to complete !!
+SYSTEM_CLOCK_COUNTER : 200398
+
+Test Completed Successfully
+$finish called at time : 2003985 ns : File "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv" Line 66
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2868.367 ; gain = 2.059
+relaunch_sim
+suspend_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 2868.367 ; gain = 0.000
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'xadc_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj xadc_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master
+WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv:221]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:47]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:48]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:52]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:53]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:56]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:57]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:60]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:61]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:65]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:66]
+INFO: [VRFC 10-2458] undeclared symbol rd, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol wr, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol eoc_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:81]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:83]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:84]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:85]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:86]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:88]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:93]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:94]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:95]
+INFO: [VRFC 10-2458] undeclared symbol ip2intc_irpt, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:126]
+INFO: [VRFC 10-2458] undeclared symbol alarm_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:133]
+INFO: [VRFC 10-2458] undeclared symbol eos_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:134]
+INFO: [VRFC 10-2458] undeclared symbol busy_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:135]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xadc_tb
+INFO: [VRFC 10-2458] undeclared symbol rx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:34]
+INFO: [VRFC 10-2458] undeclared symbol tx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:34]
+WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:83]
+"xvhdl --incr --relax -prj xadc_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package axi_lite_ipif_v3_0_4.ipif_pkg
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package lib_pkg_v1_0_2.lib_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_ipif_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_proc_common_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_family_support
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.baudrate [\baudrate(c_ratio=27)\]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_mtbf_stages=4)\]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.cntr_incr_decr_addn_f [\cntr_incr_decr_addn_f(c_size=5,...]
+Compiling architecture behavioral of entity lib_srl_fifo_v1_0_2.dynshreg_f [\dynshreg_f(c_depth=16,c_dwidth=...]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.srl_fifo_rbu_f [\srl_fifo_rbu_f(c_dwidth=8,c_fam...]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.srl_fifo_f [\srl_fifo_f(c_dwidth=8,c_family=...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_rx [\uartlite_rx(c_family="zynq")(1,...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_tx [\uartlite_tx(c_family="zynq")(1,...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_core [\uartlite_core(c_family="zynq",c...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.address_decoder [\address_decoder(c_bus_awidth=4,...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.slave_attachment [\slave_attachment(c_ard_addr_ran...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.axi_lite_ipif [\axi_lite_ipif(c_s_axi_addr_widt...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.axi_uartlite [\axi_uartlite(c_family="zynq",c_...]
+Compiling architecture axi_uartlite_slave_arch of entity xil_defaultlib.axi_uartlite_slave [axi_uartlite_slave_default]
+Compiling module xil_defaultlib.master(deep=20)
+Compiling module xil_defaultlib.memory(deep=20)
+Compiling architecture implementation of entity xil_defaultlib.xadc_wiz_0_interrupt_control [\xadc_wiz_0_interrupt_control(c_...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=5,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=1,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_address_decoder [\xadc_wiz_0_address_decoder(c_bu...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_slave_attachment [\xadc_wiz_0_slave_attachment(c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_axi_lite_ipif [\xadc_wiz_0_axi_lite_ipif(c_s_ax...]
+Compiling architecture xadc_v of entity unisim.XADC [\XADC(init_40="0000000000010000"...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_xadc_core_drp [\xadc_wiz_0_xadc_core_drp(c_s_ax...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111001010")(0...]
+Compiling architecture fdrse_v of entity unisim.FDRSE [fdrse_default]
+Compiling architecture implementation of entity xil_defaultlib.xadc_wiz_0_soft_reset [\xadc_wiz_0_soft_reset(c_reset_w...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_axi_xadc [\xadc_wiz_0_axi_xadc(1,19)(1,7)(...]
+Compiling module xil_defaultlib.xadc_wiz_0
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.xadc_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot xadc_tb_behav
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2868.367 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 2868.367 ; gain = 0.000
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Timing checks are not valid
+Timing checks are valid
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:21 . Memory (MB): peak = 2868.367 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'xadc_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj xadc_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module master
+WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/master.sv:221]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/memory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:47]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:48]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:52]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:53]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:56]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:57]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:60]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:61]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:65]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rready, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:66]
+INFO: [VRFC 10-2458] undeclared symbol rd, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol wr, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:80]
+INFO: [VRFC 10-2458] undeclared symbol eoc_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:81]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_bvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:83]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_rvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:84]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:85]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:86]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wready_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:88]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_awvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:93]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_wvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:94]
+INFO: [VRFC 10-2458] undeclared symbol s_axi_arvalid_xadc, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:95]
+INFO: [VRFC 10-2458] undeclared symbol ip2intc_irpt, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:126]
+INFO: [VRFC 10-2458] undeclared symbol alarm_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:133]
+INFO: [VRFC 10-2458] undeclared symbol eos_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:134]
+INFO: [VRFC 10-2458] undeclared symbol busy_out, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sources_1/new/top.sv:135]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module xadc_tb
+INFO: [VRFC 10-2458] undeclared symbol rx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:34]
+INFO: [VRFC 10-2458] undeclared symbol tx, assumed default net type wire [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:34]
+WARNING: [VRFC 10-3824] variable 'max_voltage' must explicitly be declared as automatic or static [C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv:83]
+"xvhdl --incr --relax -prj xadc_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package axi_lite_ipif_v3_0_4.ipif_pkg
+Compiling package synopsys.attributes
+Compiling package ieee.std_logic_misc
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package lib_pkg_v1_0_2.lib_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_ipif_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_proc_common_pkg
+Compiling package xil_defaultlib.xadc_wiz_0_family_support
+Compiling package ieee.std_logic_signed
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.baudrate [\baudrate(c_ratio=27)\]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture implementation of entity lib_cdc_v1_0_2.cdc_sync [\cdc_sync(c_mtbf_stages=4)\]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.cntr_incr_decr_addn_f [\cntr_incr_decr_addn_f(c_size=5,...]
+Compiling architecture behavioral of entity lib_srl_fifo_v1_0_2.dynshreg_f [\dynshreg_f(c_depth=16,c_dwidth=...]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.srl_fifo_rbu_f [\srl_fifo_rbu_f(c_dwidth=8,c_fam...]
+Compiling architecture imp of entity lib_srl_fifo_v1_0_2.srl_fifo_f [\srl_fifo_f(c_dwidth=8,c_family=...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_rx [\uartlite_rx(c_family="zynq")(1,...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_tx [\uartlite_tx(c_family="zynq")(1,...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.uartlite_core [\uartlite_core(c_family="zynq",c...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.pselect_f [\pselect_f(c_ab=2,c_aw=2,c_bar="...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.address_decoder [\address_decoder(c_bus_awidth=4,...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.slave_attachment [\slave_attachment(c_ard_addr_ran...]
+Compiling architecture imp of entity axi_lite_ipif_v3_0_4.axi_lite_ipif [\axi_lite_ipif(c_s_axi_addr_widt...]
+Compiling architecture rtl of entity axi_uartlite_v2_0_26.axi_uartlite [\axi_uartlite(c_family="zynq",c_...]
+Compiling architecture axi_uartlite_slave_arch of entity xil_defaultlib.axi_uartlite_slave [axi_uartlite_slave_default]
+Compiling module xil_defaultlib.master(deep=20)
+Compiling module xil_defaultlib.memory(deep=20)
+Compiling architecture implementation of entity xil_defaultlib.xadc_wiz_0_interrupt_control [\xadc_wiz_0_interrupt_control(c_...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=5,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=3,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=4,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_pselect_f [\xadc_wiz_0_pselect_f(c_ab=1,c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_address_decoder [\xadc_wiz_0_address_decoder(c_bu...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_slave_attachment [\xadc_wiz_0_slave_attachment(c_a...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_axi_lite_ipif [\xadc_wiz_0_axi_lite_ipif(c_s_ax...]
+Compiling architecture xadc_v of entity unisim.XADC [\XADC(init_40="0000000000010000"...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_xadc_core_drp [\xadc_wiz_0_xadc_core_drp(c_s_ax...]
+Compiling architecture lut4_v of entity unisim.LUT4 [\LUT4(init="1111111111001010")(0...]
+Compiling architecture fdrse_v of entity unisim.FDRSE [fdrse_default]
+Compiling architecture implementation of entity xil_defaultlib.xadc_wiz_0_soft_reset [\xadc_wiz_0_soft_reset(c_reset_w...]
+Compiling architecture imp of entity xil_defaultlib.xadc_wiz_0_axi_xadc [\xadc_wiz_0_axi_xadc(1,19)(1,7)(...]
+Compiling module xil_defaultlib.xadc_wiz_0
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.xadc_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot xadc_tb_behav
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2873.637 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '7' seconds
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2873.637 ; gain = 0.000
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Timing checks are not valid
+Timing checks are valid
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 2873.637 ; gain = 0.000
+run all
+This TB supports CONSTANT Waveform comaprision. User should compare the analog input and digital output for SIN, TRAINGLE, SQUARE waves !!
+Waiting for Analog Waveform to complete !!
+SYSTEM_CLOCK_COUNTER : 200398
+
+Test Completed Successfully
+$finish called at time : 2003985 ns : File "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv" Line 66
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2874.117 ; gain = 0.480
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2020.2/data/xsim/xsim.ini' copied to run dir:'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'xadc_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/tr_init.mem'
+INFO: [SIM-utils-43] Exported 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim/design.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj xadc_tb_vlog.prj"
+"xvhdl --incr --relax -prj xadc_tb_vhdl.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.sim/sim_1/behav/xsim'
+"xelab -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto 0842963996f74f29931f371da6f40e7b --incr --debug typical --relax --mt 2 -L xil_defaultlib -L axi_lite_ipif_v3_0_4 -L lib_pkg_v1_0_2 -L lib_srl_fifo_v1_0_2 -L lib_cdc_v1_0_2 -L axi_uartlite_v2_0_26 -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot xadc_tb_behav xil_defaultlib.xadc_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Timing checks are not valid
+Timing checks are valid
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 2874.371 ; gain = 0.145
+run all
+This TB supports CONSTANT Waveform comaprision. User should compare the analog input and digital output for SIN, TRAINGLE, SQUARE waves !!
+Waiting for Analog Waveform to complete !!
+SYSTEM_CLOCK_COUNTER : 200398
+
+Test Completed Successfully
+$finish called at time : 2003985 ns : File "C:/AGH/JOS/Projekt/Woltomierz_XADC/VoltmeterXADC/project_1.srcs/sim_1/new/xadc_tb.sv" Line 66
+run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2874.414 ; gain = 0.043
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+reset_project
+set_property top tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+reset_project
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Jun 10 13:45:54 2021...

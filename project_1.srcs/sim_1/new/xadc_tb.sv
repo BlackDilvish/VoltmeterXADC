@@ -67,27 +67,28 @@ begin
 end
 
 reg [11:0] Analog_Wave_Single_Ch;
-real voltage = 0;
-integer i_voltage = 0;
+integer voltage = 0;
+integer ascii_voltage = 0;
 
 always @ (posedge clk)
 begin
   if (uut.m_axi.rvld_xadc) begin
     Analog_Wave_Single_Ch <= uut.m_axi.rdat_xadc[15:4];
     voltage = transcode(Analog_Wave_Single_Ch);
-    i_voltage = int'(voltage*100);
+    ascii_voltage = (voltage>>4)<<4;
     end
 end 
 
-function real transcode(input [11:0] code);
-        automatic reg [11:0] mask = 12'b100000000000;
-        integer i;
+function integer transcode(input[11:0] code);
+    integer max_voltage = 1000;
+    automatic reg [11:0] mask = 12'b1000_0000_0000;
+    integer i;
         begin
-            transcode = 0.0;
+            transcode = 0;
             for(i = 0; i < 12; i = i + 1)
                 if(code & (mask >> i))
-                    transcode += (3.3 / (2 ** (i + 1)));
-        end
+                    transcode += max_voltage / (2 ** (i + 1));
+        end    
 endfunction
 
 endmodule
