@@ -54,7 +54,7 @@ wire rfifo_valid = (st == waitstatus & rvld) ? rdat[0] : 1'b0;
 wire tfifo_full = (st == waitstatus & rvld) ? rdat[3] : 1'b0;
 logic rec_trn;
 wire inca = ((st == waitread) & rvld & rec_trn);
-wire deca = ((st == waitwrite) & awrdy & ~rec_trn); //wrdy
+wire deca = ((st == waitwrite) & awrdy & ~rec_trn);
 
 always @(posedge clk, posedge rst)
     if(rst)
@@ -67,8 +67,8 @@ always @(posedge clk, posedge rst)
 always @(posedge clk, posedge rst)
 begin
   if (rst) begin
-   wadr_xadc <= 11'b00000000000; //{5'b00, CHANNEL_TB};
-   radr_xadc <= 11'b00000000000; //{5'b00, CHANNEL_TB};
+   wadr_xadc <= 11'b00000000000;
+   radr_xadc <= 11'b00000000000;
    wdat_xadc <= 32'h00000000;
    wstrb_xadc <= 4'h0;
    arvld_xadc <= 1'b0; 
@@ -99,7 +99,7 @@ always @(posedge clk, posedge rst)
 always @(posedge clk, posedge rst)
     if(rst)
         st <= readstatus;
-    else //if(addr == deep)
+    else
         st <= nst;
 
 always_comb begin
@@ -154,15 +154,15 @@ always @(posedge clk, posedge rst)
         rrdy <= 1'b0;
     else if((st == waitstatus | st == waitread) & rvld)
         rrdy <= 1'b1;  
-    else //if(st == read | st == readstatus)
+    else
         rrdy <= 1'b0;  
 always @(posedge clk, posedge rst)
     if(rst)
         data_rec <= 8'b0;
     else if (inca)
-        data_rec <= (transcode(rdat_xadc[15:4]));//rdat[7:0];
+        data_rec <= (transcode(rdat_xadc[15:4]));
 //memory write 
-always @(posedge clk)   //, posedge rst)
+always @(posedge clk)
     if(rst)
         wr <= 1'b0;
     else 
@@ -211,35 +211,22 @@ always @(posedge clk, posedge rst)
             brdy <= 1'b0;
         end
 //memory read        
-always @(posedge clk)   //, posedge rst)
+always @(posedge clk)
     if(rst)
         rd <= 1'b0;
     else 
         rd <= (st == write); 
 
-function integer map_between_ranges(integer start_range_input, end_range_input,
-start_range_output, end_range_output, value);
-    map_between_ranges = start_range_input + 1000 * (end_range_output - start_range_output) / 
-    (end_range_input - start_range_input) * (value - start_range_input) / 1000;
-endfunction
-
 function integer transcode(input[11:0] code);
     integer max_voltage = 1000;
     automatic reg [11:0] mask = 12'b1000_0000_0000;
     integer i;
-    //integer unmapped;
         begin
             transcode = 0;
             for(i = 0; i < 12; i = i + 1)
                 if(code & (mask >> i))
                     transcode += max_voltage / (2 ** (i + 1));  
-           //transcode /= 10;
-           $display("Before = %d", transcode);
            transcode = transcode >> 4;
-           $display("After = %d", transcode);         
-           //unmapped = transcode;       
-           //transcode = map_between_ranges(0, 3300, 0, 255, transcode);
-           //$display("Mapped = %d", transcode);
         end    
 endfunction    
 

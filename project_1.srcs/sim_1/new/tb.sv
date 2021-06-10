@@ -78,10 +78,4 @@ initial begin
     #1000 $finish();
 end
 
-function integer map_between_ranges(integer start_range_input, end_range_input,
-start_range_output, end_range_output, value);
-    map_between_ranges = start_range_input + 1000 * (end_range_output - start_range_output) / 
-    (end_range_input - start_range_input) * (value - start_range_input) / 1000;
-endfunction
-
 endmodule

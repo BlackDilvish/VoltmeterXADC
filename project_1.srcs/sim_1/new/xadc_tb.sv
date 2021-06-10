@@ -40,24 +40,6 @@ initial begin
     forever #hp clk = ~clk;
 end
 
-/*
-// Input clock generation
-
-always begin
-  s_axi_aclk = #(PER1/2) ~s_axi_aclk;
-end
-
-always begin
-  s_axi_aclk_tb = #10 s_axi_aclk;
-end*/
-
-/*initial begin
-    rst = 1'b0;
-    #1 rst = 1'b1;
-    repeat (5) @(posedge clk);
-    #2 rst = 1'b0;
-end*/
-
 initial
 begin
   $display ("Timing checks are not valid");
