@@ -224,7 +224,7 @@ start_range_output, end_range_output, value);
 endfunction
 
 function integer transcode(input[11:0] code);
-    integer max_voltage = 3300;
+    integer max_voltage = 1000;
     automatic reg [11:0] mask = 12'b1000_0000_0000;
     integer i;
     //integer unmapped;
